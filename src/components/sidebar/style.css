@@ -1,0 +1,42 @@
+.sidebar {
+    width: 15%;
+    background-color: #999999;
+    border-right: 1px solid #808080;
+    padding-top: 40px;
+}
+
+.logo {
+    padding-left: 70px;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
+
+.nav {
+    padding-left: 60px;
+    margin: 30px auto 0;
+    text-align: left;
+    font-size: 22px;
+}
+
+li {
+    margin-bottom: 10px;
+    list-style: none;
+    font-family: 'Acme', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #404040;
+}
+
+a:hover {
+    font-size: 23px;
+    color: #595959;
+    transition: all 0.2s;
+}
+
+a:focus {
+    color: #595959;
+    transition: all 0.2s;
+}

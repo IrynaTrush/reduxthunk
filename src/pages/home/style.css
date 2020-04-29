@@ -1,0 +1,16 @@
+.homeWrapper {
+    background: url('https://images7.alphacoders.com/394/394790.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.homeText {
+    font-size: 80px;
+    font-family: 'Acme', sans-serif;
+    text-transform: uppercase;
+    color: #333333;
+    position: absolute;
+    right: 90px;
+    bottom: 80px;
+  margin: 0;
+}
