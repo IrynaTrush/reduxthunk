@@ -37,10 +37,10 @@ export const loadUsers = () => (dispatch) => {
   };
 
   export const loadTweets = () => (dispatch) => {
-    api.getTweets().then((data) => {
+    api.getTweets().then((res) => {
       dispatch({
         type: LOAD_TWEETS_SUCCESS,
-        payload: data,
+        payload: res,
       });
     }).catch((err) => {
       console.log('error');

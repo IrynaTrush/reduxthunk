@@ -29,7 +29,7 @@ const homeReducer = (state = initialState, action) => {
         case ADD_NEW_TWEET_SUCCESS: {
             return {
                 ...state,
-                tweets: [...state.tweets, action.payload.data.data]
+                tweets: [...state.tweets, action.payload]
             };
         }
         default:

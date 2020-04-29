@@ -16,25 +16,28 @@ const AddPostForm = (props) => {
     const usersServer = useSelector(users);
 
     useEffect(() => {
-        setTimeout(() => dispatch(loadUsers()), 500);
+        
         if(content !== '' && image !== '') {
             changeIsDisable(false);
         } else {
             changeIsDisable(true);
         }
+        setTimeout(() => dispatch(loadUsers()), 500);
     }, [content, image, dispatch]);
     
     const handleContent = (e) => {
         changeContent(e.target.value);
+        console.log(e.target.value)
     }
-    
+   
     const handleImage = (e) => {
         changeImage(e.target.value);
+        console.log(e.target.value)
     }
 
     const handleId = (e) => {
         changeId(e.target.value);
-        console.log(userId)
+        console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {
@@ -49,13 +52,13 @@ const AddPostForm = (props) => {
     })
     return(
         <div className="wrapperForm" >
-            <form onSubmit={handleSubmit}>
+            <form >
                <input  placeholder="Content of your post" className="input" required onChange={handleContent}/>
                <input placeholder="URL of the valid image" className="input" required  onChange={handleImage}/>
                 <select className="select" onChange={handleId}>
                   {option}
                 </select>
-                <button type="submit" className="btn"  disabled={isDisable}>
+                <button type="submit" className="btn"  disabled={isDisable} onClick={handleSubmit}>
                     Add new post
                 </button>
             </form>

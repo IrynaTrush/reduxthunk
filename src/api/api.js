@@ -15,10 +15,10 @@ const api = {
     }),
     getTweets: () => BASE_CONNECTION.get('/tweets'),
     createTweet: (userId, content, image) => BASE_CONNECTION.post('/tweets', {
-        userId,
+        userId: parseInt(userId),
         content,
         image,
     }),
-}
+};
 
 export default api;
