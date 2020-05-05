@@ -1,11 +1,10 @@
 import api from '../../api/api';
-
 import { LOAD_USERS_SUCCESS, LOAD_USERS_FAIL,
    ADD_NEW_USER_SUCCESS, ADD_NEW_USER_FAIL,
    LOAD_TWEETS_SUCCESS, LOAD_TWEETS_FAIL,
    ADD_NEW_TWEET_SUCCESS, ADD_NEW_TWEET_FAIL } from './action.types';
 
-export const loadUsers = () => (dispatch) => {
+export const loadUsers = (load) => (dispatch) => {
     api.getUsers().then((res) => {
       dispatch({
         type: LOAD_USERS_SUCCESS,
@@ -22,11 +21,11 @@ export const loadUsers = () => (dispatch) => {
 
   export const postNewUser= ( name, username, url, history) => (dispatch) => {
     api.createUser(name, username, url).then((data) => {
-       dispatch({
+      dispatch({
          type: ADD_NEW_USER_SUCCESS,
          payload: data,
        });
-       history.push('/reduxthunk/users');
+      history.push('/reduxthunk/users');
     }).catch((err) => {
       console.log('error');
       dispatch({
@@ -66,3 +65,4 @@ export const loadUsers = () => (dispatch) => {
       });
     });
   };
+

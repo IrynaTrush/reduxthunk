@@ -4,6 +4,7 @@ import  Post  from '../../components/post/index';
 import { useSelector, useDispatch } from 'react-redux';
 import { tweets, users } from '../../redux/selectors/home.selector';
 import { loadTweets, loadUsers } from '../../redux/actions/home.action';
+import preloader from '../../assets/images/Spinner-1s-200px.svg';
 
 export default () => {
     const tweetsServer = useSelector(tweets);
@@ -29,7 +30,9 @@ export default () => {
     })
     return(
         <div className="postsWrapper">
-            {tweet}
+            {
+              usersServer.length ? tweet : <img src={preloader} alt="preloader"/>
+            }
         </div>
     )
 }

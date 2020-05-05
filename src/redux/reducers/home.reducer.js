@@ -1,5 +1,5 @@
 import { LOAD_USERS_SUCCESS , ADD_NEW_USER_SUCCESS, LOAD_TWEETS_SUCCESS,
-    ADD_NEW_TWEET_SUCCESS } from '../actions/action.types';
+    ADD_NEW_TWEET_SUCCESS, } from '../actions/action.types';
 
 const initialState = {
   users: [],
